@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Morning Ride Inc</title>
+    <meta name="description"
+        content="Let's connect! We'd love to hear from you. Reach out for feedback, collaborations, or questions.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="./assets/images/favicon.webp">
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+
+    <!-- Site Navigation Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="./index.html" class="brand-logo">
+                <img src="./assets/images/MORNINGRIDEBloglogo.webp" alt="Morning Ride Logo" width="220" height="auto">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="./index.html" class="nav-link">HOME</a>
+                <a href="./posts.html" class="nav-link">BLOG</a>
+                <a href="./resources.html" class="nav-link">RESOURCES</a>
+                <a href="./offers.html" class="nav-link">OFFERS</a>
+                <a href="./about.html" class="nav-link">ABOUT</a>
+                <a href="./contact.html" class="nav-link active">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact Form & Intro Section -->
+        <section class="contact-hero-section">
+            <div class="container contact-hero-container">
+
+                <!-- Left Side Text & Bullets -->
+                <div class="contact-info-col">
+                    <h1 class="contact-title">Let's Connect &mdash; We'd Love to Hear From You!</h1>
+                    <p class="contact-intro">
+                        Our team is here to support your growth and listen to what inspires you. Whether it's feedback,
+                        collaboration, or just a friendly hello &mdash; we'd be happy to hear from you!
+                    </p>
+
+                    <h2 class="contact-subtitle">Our dedicated team can help you:</h2>
+                    <ul class="contact-bullets">
+                        <li><span class="check-icon">&#10004;</span> Share your insights or reflections from the blog
+                        </li>
+                        <li><span class="check-icon">&#10004;</span> Ask questions about growing your digital business
+                        </li>
+                        <li><span class="check-icon">&#10004;</span> Recommend a topic you want us to explore next</li>
+                        <li><span class="check-icon">&#10004;</span> Connect with us for collaborations or guest
+                            contributions</li>
+                    </ul>
+                </div>
+
+                <!-- Right Side Form Card -->
+                <div class="contact-form-card">
+                    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <input type="text" name="name" id="name" placeholder="Name" required aria-label="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="subject" id="subject" placeholder="Subject" required
+                                aria-label="Subject">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Email" required aria-label="Email">
+                        </div>
+
+                        <div class="form-group">
+                            <textarea name="message" id="message" rows="5" placeholder="Message" required
+                                aria-label="Message"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-green btn-full">
+                            Send Message
+                            <span class="btn-subtext">Can't wait to connect with you!</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Featured Offers Section below Contact Form -->
+        <section class="contact-offers-section">
+            <div class="container">
+                <h2 class="section-title text-center">Your path to growth, guided step-by-step</h2>
+
+                <div class="offers-rows">
+
+                    <!-- Offer 1 (Image Left, Text Right) -->
+                    <div class="offer-row">
+                        <div class="offer-img-col">
+                            <img src="./assets/images/offer-1.webp" alt="Offer 1 Thumbnail" class="offer-img"
+                                width="500" height="auto">
+                        </div>
+                        <div class="offer-text-col">
+                            <h3 class="offer-title">Quality Digital Business Training</h3>
+                            <p class="offer-desc">
+                                Get access to actionable roadmaps, frameworks, and expert guidance to fast-track your
+                                online venture.
+                            </p>
+                            <a href="./offers.html#offer-1" class="btn-link-green">See Full Offer &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Offer 2 (Text Left, Image Right) -->
+                    <div class="offer-row reverse-row">
+                        <div class="offer-text-col">
+                            <h3 class="offer-title">Accessible &amp; Practical Resources</h3>
+                            <p class="offer-desc">
+                                Download high-converting templates, content planning tools, and checklists built for
+                                everyday creators.
+                            </p>
+                            <a href="./offers.html#offer-2" class="btn-link-green">See Full Offer &rarr;</a>
+                        </div>
+                        <div class="offer-img-col">
+                            <img src="./assets/images/offer-2.webp" alt="Offer 2 Thumbnail" class="offer-img"
+                                width="500" height="auto">
+                        </div>
+                    </div>
+
+                    <!-- Offer 3 (Image Left, Text Right) -->
+                    <div class="offer-row">
+                        <div class="offer-img-col">
+                            <img src="./assets/images/offer-3.webp" alt="Offer 3 Thumbnail" class="offer-img"
+                                width="500" height="auto">
+                        </div>
+                        <div class="offer-text-col">
+                            <h3 class="offer-title">Publisher &amp; Monetization Systems</h3>
+                            <p class="offer-desc">
+                                Turn your knowledge into recurring income streams through digital products and
+                                subscription models.
+                            </p>
+                            <a href="./offers.html#offer-3" class="btn-link-green">See Full Offer &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand">
+                <img src="./assets/images/MORNINGBLISSforYourDigitalSuccessLogo.webp" alt="Morning Bliss Logo"
+                    class="footer-logo" width="200">
+                <p class="tagline">Fuel Your Digital Growth Daily</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/buyannemekh.chimeddorj" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook">
+                        <img src="./assets/images/icon-facebook.webp" alt="Facebook" width="28">
+                    </a>
+                    <a href="http://instagram.com/buyannemekhchimeddorj" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <img src="./assets/images/icon-instagram.webp" alt="Instagram" width="28">
+                    </a>
+                    <a href="https://www.youtube.com/@systemewarriors5327" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <img src="./assets/images/icon-youtube.webp" alt="YouTube" width="28">
+                    </a>
+                    <a href="https://x.com/Buyanne58730288" target="_blank" rel="noopener noreferrer"
+                        aria-label="X Twitter">
+                        <img src="./assets/images/icon-x.webp" alt="X Twitter" width="28">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./posts.html">Blog</a></li>
+                    <li><a href="./resources.html">Resources</a></li>
+                    <li><a href="./offers.html">Offers</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Updated Official 6 Categories -->
+            <div class="footer-col">
+                <h4 class="footer-title">Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="./category/start-here.html">Start Here</a></li>
+                    <li><a href="./category/online-business.html">Online Business</a></li>
+                    <li><a href="./category/content-publishing.html">Content &amp; Publishing</a></li>
+                    <li><a href="./category/digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="./category/monetization.html">Monetization</a></li>
+                    <li><a href="./category/tools-reviews.html">Tools &amp; Reviews</a></li>
+                </ul>
+            </div>
+
+            <!-- Kit Email Opt-in Form -->
+            <div class="footer-col footer-newsletter">
+                <h4 class="footer-title">Stay Connected</h4>
+                <p>Get Expert Online Marketing Tips Delivered Right To Your Inbox!</p>
+
+                <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+                <form action="https://app.kit.com/forms/YOUR_KIT_FORM_ID/subscriptions" class="newsletter-form"
+                    method="post" data-sv-form="YOUR_KIT_FORM_ID">
+                    <input type="email" name="email_address" placeholder="Enter your email address" required
+                        aria-label="Email Address">
+                    <button type="submit" class="btn btn-green">Join Now</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Legal Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 MorningRide, Inc. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="./privacy-policy.html">Privacy Policy</a> |
+                    <a href="./terms-conditions.html">Terms and Conditions</a> |
+                    <a href="./disclaimer.html">Disclaimer</a> |
+                    <a href="./cookie-policy.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./assets/scripts/main.js"></script>
+</body>
+
+</html>
