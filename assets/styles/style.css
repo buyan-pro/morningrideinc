@@ -1,0 +1,533 @@
+/* ==========================================================================
+   MORNING RIDE INC - MASTER CSS STYLESHEET
+   ========================================================================== */
+
+/* 1. CSS CUSTOM PROPERTIES (DESIGN SYSTEM) */
+:root {
+    /* Brand Color Palette */
+    --color-primary-green: #00be06;
+    --color-primary-green-hover: #009e05;
+    --color-header-bg: #ecf0f1;
+    --color-headline: #0b0b18;
+    --color-category-red: #e74c3c;
+    --color-body-text: #333333;
+    --color-muted-text: #666666;
+    --color-white: #ffffff;
+    --color-footer-bg: #0b0b0b;
+    --color-border: #e2e8f0;
+
+    /* Typography */
+    --font-family-base: 'Inter', 'PT Sans', system-ui, -apple-system, sans-serif;
+    --font-family-heading: 'Inter', 'PT Sans', system-ui, -apple-system, sans-serif;
+
+    /* Spacing & Layout */
+    --container-max-width: 1200px;
+    --header-height: 80px;
+    --border-radius-card: 12px;
+    --border-radius-btn: 6px;
+    --transition-fast: 0.2s ease-in-out;
+}
+
+/* 2. BASE & RESET STYLES */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--color-body-text);
+    background-color: var(--color-white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Layout Container */
+.container {
+    width: 90%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-red {
+    color: var(--color-category-red);
+}
+
+/* 3. SITE HEADER & NAVIGATION */
+.site-header {
+    background-color: var(--color-header-bg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-logo img {
+    height: 48px;
+    width: auto;
+}
+
+.main-nav {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--color-headline);
+    padding: 6px 0;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--color-primary-green);
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-headline);
+    border-radius: 2px;
+}
+
+/* Mobile Menu Button */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-menu-toggle .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    background-color: var(--color-headline);
+    transition: var(--transition-fast);
+}
+
+/* 4. BUTTONS & LINK STYLES */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius-btn);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-green {
+    background-color: var(--color-primary-green);
+    color: var(--color-white);
+}
+
+.btn-green:hover {
+    background-color: var(--color-primary-green-hover);
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    border: 2px solid var(--color-headline);
+    color: var(--color-headline);
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-headline);
+    color: var(--color-white);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.btn-subtext {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 400;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+
+.btn-link-green {
+    color: var(--color-primary-green);
+    font-weight: 700;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-link-green:hover {
+    color: var(--color-primary-green-hover);
+    text-decoration: underline;
+}
+
+/* 5. PAGE SECTIONS & HEADINGS */
+main {
+    padding: 40px 0 60px 0;
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.page-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-headline);
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-muted-text);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* 6. BLOG ARCHIVE GRID (3x3 Layout) */
+.blog-grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 20px;
+}
+
+.blog-card {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+}
+
+.blog-thumb {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--border-radius-card);
+}
+
+.blog-content {
+    padding: 16px 4px 0 4px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-category {
+    color: var(--color-category-red);
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.blog-card-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--color-headline);
+    line-height: 1.3;
+    margin-bottom: 10px;
+}
+
+.blog-card-title a:hover {
+    color: var(--color-primary-green);
+}
+
+.blog-excerpt {
+    color: var(--color-muted-text);
+    font-size: 0.925rem;
+    line-height: 1.5;
+}
+
+/* 7. OFFERS & RESOURCES ALTERNATING ROWS */
+.offers-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.offer-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.offer-row.reverse-row {
+    grid-template-areas: "text img";
+}
+
+.offer-img {
+    width: 100%;
+    border-radius: var(--border-radius-card);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.offer-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--color-headline);
+    margin-bottom: 12px;
+}
+
+.offer-desc {
+    font-size: 1.05rem;
+    color: var(--color-muted-text);
+    margin-bottom: 18px;
+}
+
+/* 8. CONTACT PAGE SPECIFIC */
+.contact-hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.contact-title {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--color-headline);
+    margin-bottom: 16px;
+}
+
+.contact-intro {
+    font-size: 1.05rem;
+    color: var(--color-muted-text);
+    margin-bottom: 24px;
+}
+
+.contact-bullets {
+    margin-top: 16px;
+}
+
+.contact-bullets li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.check-icon {
+    color: var(--color-primary-green);
+    font-weight: bold;
+}
+
+.contact-form-card {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: var(--border-radius-card);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-headline);
+}
+
+/* 9. GLOBAL FOOTER */
+.site-footer {
+    background-color: var(--color-footer-bg);
+    color: var(--color-white);
+    padding: 60px 0 20px 0;
+    margin-top: 60px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 2fr;
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    max-width: 180px;
+    margin-bottom: 12px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 16px;
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #cbd5e0;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--color-primary-green);
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.newsletter-form input {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: 1px solid #4a5568;
+    background-color: #1a202c;
+    color: var(--color-white);
+    outline: none;
+}
+
+.footer-bottom {
+    padding-top: 20px;
+    font-size: 0.825rem;
+    color: #718096;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.legal-links a {
+    color: #718096;
+    margin: 0 4px;
+}
+
+.legal-links a:hover {
+    color: var(--color-white);
+}
+
+/* 10. MEDIA QUERIES (MOBILE RESPONSIVENESS) */
+@media (max-width: 992px) {
+    .blog-grid-3x3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+        /* Can be toggled via JS mobile menu */
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .blog-grid-3x3 {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-row,
+    .offer-row.reverse-row,
+    .contact-hero-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
