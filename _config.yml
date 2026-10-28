@@ -1,0 +1,9 @@
+title: Morning Ride Inc
+email: service@morningrideinc.com
+description: Helping You Choose The Right Path To Digital Freedom
+baseurl: ""
+url: "https://www.morningrideinc.com"
+
+# Jekyll settings
+markdown: kramdown
+permalink: /:title/

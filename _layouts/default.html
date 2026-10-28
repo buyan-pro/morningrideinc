@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} - Helping You Choose The
+        Right Path To Digital Freedom{% endif %}</title>
+    <meta name="description"
+        content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | default: site.description }}">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/webp" href="{{ '/assets/images/favicon.webp' | relative_url }}">
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/styles/style.css' | relative_url }}">
+</head>
+
+<body>
+
+    <!-- Site Navigation Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="{{ '/' | relative_url }}" class="brand-logo">
+                <img src="{{ '/assets/images/MORNINGRIDEBloglogo.webp' | relative_url }}" alt="Morning Ride Logo"
+                    width="220" height="auto">
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav" aria-label="Main Navigation">
+                <a href="{{ '/' | relative_url }}" class="nav-link {% if page.url == '/' %}active{% endif %}">HOME</a>
+                <a href="{{ '/posts/' | relative_url }}"
+                    class="nav-link {% if page.url contains '/posts' %}active{% endif %}">BLOG</a>
+                <a href="{{ '/resources/' | relative_url }}"
+                    class="nav-link {% if page.url contains '/resources' %}active{% endif %}">RESOURCES</a>
+                <a href="{{ '/offers/' | relative_url }}"
+                    class="nav-link {% if page.url contains '/offers' %}active{% endif %}">OFFERS</a>
+                <a href="{{ '/about/' | relative_url }}"
+                    class="nav-link {% if page.url contains '/about' %}active{% endif %}">ABOUT</a>
+                <a href="{{ '/contact/' | relative_url }}"
+                    class="nav-link {% if page.url contains '/contact' %}active{% endif %}">CONTACT</a>
+            </nav>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Dynamic Page Content -->
+    <main class="site-main">
+        {{ content }}
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+
+            <!-- Brand Column -->
+            <div class="footer-col footer-brand">
+                <img src="{{ '/assets/images/MORNINGBLISSforYourDigitalSuccessLogo.webp' | relative_url }}"
+                    alt="Morning Bliss Logo" class="footer-logo" width="200">
+                <p class="tagline">Fuel Your Digital Growth Daily</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/buyannemekh.chimeddorj" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook">
+                        <img src="{{ '/assets/images/icon-facebook.webp' | relative_url }}" alt="Facebook" width="28">
+                    </a>
+                    <a href="http://instagram.com/buyannemekhchimeddorj" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <img src="{{ '/assets/images/icon-instagram.webp' | relative_url }}" alt="Instagram" width="28">
+                    </a>
+                    <a href="https://www.youtube.com/@systemewarriors5327" target="_blank" rel="noopener noreferrer"
+                        aria-label="YouTube">
+                        <img src="{{ '/assets/images/icon-youtube.webp' | relative_url }}" alt="YouTube" width="28">
+                    </a>
+                    <a href="https://x.com/Buyanne58730288" target="_blank" rel="noopener noreferrer"
+                        aria-label="X Twitter">
+                        <img src="{{ '/assets/images/icon-x.webp' | relative_url }}" alt="X Twitter" width="28">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-title">Navigation</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ '/' | relative_url }}">Home</a></li>
+                    <li><a href="{{ '/posts/' | relative_url }}">Blog</a></li>
+                    <li><a href="{{ '/resources/' | relative_url }}">Resources</a></li>
+                    <li><a href="{{ '/offers/' | relative_url }}">Offers</a></li>
+                    <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+                    <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-col">
+                <h4 class="footer-title">Categories</h4>
+                <ul class="footer-links">
+                    <li><a href="{{ '/category/must-read/' | relative_url }}">Must Read</a></li>
+                    <li><a href="{{ '/category/how-tos/' | relative_url }}">How To's</a></li>
+                    <li><a href="{{ '/category/tips-tricks/' | relative_url }}">Tips &amp; Tricks</a></li>
+                    <li><a href="{{ '/category/product-reviews/' | relative_url }}">Product Reviews</a></li>
+                    <li><a href="{{ '/category/tools-resources/' | relative_url }}">Tools &amp; Resources</a></li>
+                </ul>
+            </div>
+
+            <!-- Kit Email Opt-in Form -->
+            <div class="footer-col footer-newsletter">
+                <h4 class="footer-title">Stay Connected</h4>
+                <p>Get Expert Online Marketing Tips Delivered Right To Your Inbox!</p>
+
+                <!-- Replace YOUR_KIT_FORM_ID with your form ID from Kit -->
+                <script async src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+                <form action="https://app.kit.com/forms/YOUR_KIT_FORM_ID/subscriptions" class="newsletter-form"
+                    method="post" data-sv-form="YOUR_KIT_FORM_ID">
+                    <input type="email" name="email_address" placeholder="Enter your email address" required
+                        aria-label="Email Address">
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Legal Copyright Bar -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 MorningRide, Inc. All Rights Reserved.</p>
+                <div class="legal-links">
+                    <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a> |
+                    <a href="{{ '/terms-conditions/' | relative_url }}">Terms and Conditions</a> |
+                    <a href="{{ '/disclaimer/' | relative_url }}">Disclaimer</a> |
+                    <a href="{{ '/cookie-policy/' | relative_url }}">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/scripts/main.js' | relative_url }}"></script>
+</body>
+
+</html>
